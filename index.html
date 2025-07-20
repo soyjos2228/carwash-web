@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carwash El Brillante</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body{font-family:'Roboto',Arial,sans-serif;margin:0;padding:0;background:#eef2f7;color:#333;}
+    header{background:#007bff;color:white;padding:25px 20px;text-align:center;box-shadow:0 3px 6px rgba(0,0,0,0.1);}
+    header img.logo-real{max-width:130px;margin-bottom:10px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.15);}
+    h1{margin:0;font-weight:700;font-size:2.5rem;}
+    p.subtitle{font-size:1.2rem;margin-top:5px;font-weight:400;}
+    .section{padding:30px 20px;max-width:900px;margin:0 auto;}
+    .services{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+    .service-card{background:white;border-radius:12px;padding:20px;box-shadow:0 4px 8px rgba(0,0,0,0.1);width:280px;text-align:center;transition:all 0.3s ease;cursor:default;}
+    .service-card:hover{box-shadow:0 8px 20px rgba(0,0,0,0.15);transform:translateY(-7px);}
+    .service-card img{width:50px;margin-bottom:15px;}
+    form{background:white;padding:25px 20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);max-width:500px;margin:0 auto;}
+    input,select,button{width:100%;padding:12px;margin:12px 0;border-radius:6px;border:1px solid #ccc;font-size:1rem;font-family:'Roboto',Arial,sans-serif;box-sizing:border-box;}
+    button{background:#007bff;color:white;border:none;font-weight:700;cursor:pointer;transition:background-color 0.3s ease;}
+    button:hover{background-color:#0056b3;}
+    footer{background:#222;color:white;text-align:center;padding:20px;margin-top:40px;font-size:0.9rem;}
+    @media(max-width:600px){.services{flex-direction:column;align-items:center;}.service-card{width:90%;}form{width:90%;}}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="Logo Carwash El Brillante" class="logo-real" />
+    <h1>Carwash El Brillante</h1>
+    <p class="subtitle">¡Haz tu reserva hoy mismo!</p>
+  </header>
+  <div class="section">
+    <h2 style="text-align:center; margin-bottom:25px;">Servicios</h2>
+    <div class="services">
+      <div class="service-card"><img src="https://img.icons8.com/ios-filled/50/007bff/car-wash.png"/><h3>Lavado exterior</h3><p>$10 - Lavado rápido y eficiente por fuera.</p></div>
+      <div class="service-card"><img src="https://img.icons8.com/ios-filled/50/007bff/bucket.png"/><h3>Lavado completo</h3><p>$15 - Limpieza por dentro y por fuera.</p></div>
+      <div class="service-card"><img src="https://img.icons8.com/ios-filled/50/007bff/polish.png"/><h3>Pulida de carrocería</h3><p>$25 - Deja tu auto como nuevo con cera premium.</p></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2 style="text-align:center; margin-bottom:25px;">Reservar ahora</h2>
+    <form onsubmit="sendWhatsApp(); return false;">
+      <input type="text" id="nombre" placeholder="Nombre completo" required />
+      <input type="tel" id="telefono" placeholder="Teléfono" required />
+      <input type="text" id="direccion" placeholder="Dirección" required />
+      <input type="datetime-local" id="fecha" required />
+      <select id="servicio" required>
+        <option value="">Selecciona un servicio</option>
+        <option value="Lavado exterior">Lavado exterior</option>
+        <option value="Lavado completo">Lavado completo</option>
+        <option value="Pulida de carrocería">Pulida de carrocería</option>
+      </select>
+      <button type="submit">Enviar por WhatsApp</button>
+    </form>
+  </div>
+  <footer>
+    <p>Contacto por WhatsApp: +1 (415) 571-0835</p>
+    <p>Horario: Lunes a Domingo, 8:00 a.m. – 6:00 p.m.</p>
+  </footer>
+  <script>
+    function sendWhatsApp(){
+      const nombre=document.getElementById('nombre').value;
+      const telefono=document.getElementById('telefono').value;
+      const direccion=document.getElementById('direccion').value;
+      const fecha=document.getElementById('fecha').value;
+      const servicio=document.getElementById('servicio').value;
+      const mensaje=`Hola, soy ${nombre}.%0AMi número: ${telefono}.%0AQuiero una reserva para el ${fecha}.%0AEn la dirección: ${direccion}.%0AServicio: ${servicio}.`;
+      const numero='14155710835';
+      window.open(`https://wa.me/${numero}?text=${mensaje}`,'_blank');
+    }
+  </script>
+</body>
+</html>
