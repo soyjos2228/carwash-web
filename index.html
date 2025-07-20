@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carwash El Brillante</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 
@@ -148,7 +148,7 @@
   </header>
 
   <div class="section">
-    <h2 style="text-align:center; margin-bottom: 25px;">Servicios</h2>
+    <h2 style="text-align:center; margin-bottom:25px;">Servicios</h2>
     <div class="services">
       <div class="service-card">
         <img src="https://img.icons8.com/ios-filled/50/007bff/car-wash.png" alt="Lavado exterior" />
@@ -169,7 +169,7 @@
   </div>
 
   <div class="section">
-    <h2 style="text-align:center; margin-bottom: 25px;">Reservar ahora</h2>
+    <h2 style="text-align:center; margin-bottom:25px;">Reservar ahora</h2>
     <form onsubmit="sendWhatsApp(); return false;">
       <input type="text" id="nombre" placeholder="Nombre completo" required />
       <input type="tel" id="telefono" placeholder="Teléfono" required />
@@ -198,7 +198,6 @@
       const fecha = document.getElementById('fecha').value;
       const servicio = document.getElementById('servicio').value;
       const mensaje = `Hola, soy ${nombre}.%0AMi número: ${telefono}.%0AQuiero una reserva para el ${fecha}.%0AEn la dirección: ${direccion}.%0AServicio: ${servicio}.`;
-
       const numero = '14155710835';
       const url = `https://wa.me/${numero}?text=${mensaje}`;
       window.open(url, '_blank');
