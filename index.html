@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carwash El Brillante</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
@@ -25,9 +28,11 @@
       box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
 
-    header img {
-      max-width: 120px;
-      margin-bottom: 15px;
+    header img.logo-real {
+      max-width: 130px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     h1 {
@@ -137,7 +142,7 @@
 <body>
 
   <header>
-    <img src="https://img.icons8.com/ios-filled/100/ffffff/car-wash.png" alt="Logo Carwash El Brillante" />
+    <img src="img/logo.png" alt="Logo Carwash El Brillante" class="logo-real" />
     <h1>Carwash El Brillante</h1>
     <p class="subtitle">¡Haz tu reserva hoy mismo!</p>
   </header>
@@ -194,9 +199,8 @@
       const servicio = document.getElementById('servicio').value;
       const mensaje = `Hola, soy ${nombre}.%0AMi número: ${telefono}.%0AQuiero una reserva para el ${fecha}.%0AEn la dirección: ${direccion}.%0AServicio: ${servicio}.`;
 
-      const numero = '14155710835'; // Número WhatsApp sin signos ni espacios
+      const numero = '14155710835';
       const url = `https://wa.me/${numero}?text=${mensaje}`;
-
       window.open(url, '_blank');
     }
   </script>
